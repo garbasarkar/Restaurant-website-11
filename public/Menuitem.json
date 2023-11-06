@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/s1QrW2T/menu1.jpg",
+    "name": "First Food",
+    "price": "$29"
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/9gMF0c9/menu2.jpg",
+    "name": "BBQ",
+    "price": "$39"
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/C1Dvtmw/menu3.jpg",
+    "name": "Desserts",
+    "price": "$49"
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/FxyMTCS/menu4.jpg",
+    "name": "Ludush",
+    "price": "$19"
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/0Zwwny3/menu5.webp",
+    "name": "Pizza",
+    "price": "$59"
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/hZ5WjC2/menu6.jpg",
+    "name": "Salads",
+    "price": "$69"
+  },
+  {
+    "id": 7,
+    "image": "https://i.ibb.co/mb9k5Pq/menu7-pnt.webp",
+    "name": "Sharipma",
+    "price": "$24"
+  },
+  {
+    "id": 8,
+    "image": "https://i.ibb.co/4WdTPTh/menu8.jpg",
+    "name": "Chiken",
+    "price": "$34"
+  }
+]

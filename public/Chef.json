@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/Jppp3YF/chef3.jpg",
+    "name": "Helena Rizzo"
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/vdMyJVn/chef2.jpg",
+    "name": "Clare Smyth"
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/qRpwF1k/chef4.jpg",
+    "name": "Wolfgang Puck"
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/YX7Z6Xj/chef5.webp",
+    "name": "Jamie Ovlier"
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/7Xs2KM9/chef6.jpg",
+    "name": "Gellu Garum"
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/C9J53cq/chef7.jpg",
+    "name": "Kalumna Raun"
+  },
+  {
+    "id": 7,
+    "image": "https://i.ibb.co/Wx6R6KX/chef8.webp",
+    "name": "Selina Rimzim"
+  },
+  {
+    "id": 8,
+    "image": "https://i.ibb.co/YX7Z6Xj/chef5.webp",
+    "name": "Chiken"
+  }
+]

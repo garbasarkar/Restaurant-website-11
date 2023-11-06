@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/fMyM6XG/customar1.jpg",
+    "name": "Danial potter",
+    "customer_review": "I had the pleasure of trying Dish A, and it was an absolutely delightful experience. The combination of flavors was extraordinary, leaving my taste buds wanting more. The dish was perfectly cooked.",
+    "food": "Pizza",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/DtMXvmZ/customar3.webp",
+    "name": "Dish molhottra",
+    "customer_review": "Dish B exceeded all my expectations! The flavors were outstanding, and it was a delightful culinary adventure. I was particularl impressed with the presentation, and the appetizer was a work of art. I would rate it 4.8 out of 5.",
+    "food": "Appetizer",
+    "rating": 4.8
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/7Y0dmdC/Customer-4.jpg",
+    "name": "Aliaon Dawn",
+    "customer_review": "Dish C is my go-to snack when I need a quick bite. The taste is consistently perfect, and it never disappoints.  and I can't recommend it enough. It's the ideal snack to satisfy your cravings. I would rate it 4.3 out of 5.",
+    "food": "Snack",
+    "rating": 4.3
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/Zgrgn7J/customar5.jpg",
+    "name": "Albert Cole",
+    "customer_review": "Dish D is a true culinary masterpiece. The dessert was a work of art and a sensory delight. The flavors were rich and satisfying, leaving a lasting impression. I can't recommend it enough. I would rate it 4.9 out of 5.",
+    "food": "Dessert",
+    "rating": 4.9
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/VBcBfBX/customar6.jpg",
+    "name": "Helena Nizzo",
+    "customer_review": "Dish E is a mouthwatering and memorable dish. The main course was cooked to perfection, and the taste was exceptional. The flavors were rich and satisfying It's a must-try for food enthusiasts. I would rate it 4.7 out of 5.",
+    "food": "Pizza",
+    "rating": 4.7
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/DtCNXGw/customar8.webp",
+    "name": "Jamia Oliver",
+    "customer_review": "I tried Dish F, and it was an incredible experience. The appetizer was a culinary delight, and the taste was outstanding. The presentation was impressive, making it a memorable dish. I would rate it 4.6 out of 5.",
+    "food": "Appetizer",
+    "rating": 4.6
+  },
+  {
+    "id": 7,
+    "image": "https://i.ibb.co/7Y0dmdC/Customer-4.jpg",
+    "name": "Clare Smyth",
+    "customer_review": "Dish G is perfect for foodies! The main course was delectable, and I enjoyed every bite. The flavors were rich and satisfying It's a great option for those who appreciate fine dining. I would rate it 4.4 out of 5.",
+    "food": "Ludush",
+    "rating": 4.4
+  },
+  {
+    "id": 8,
+    "image": "https://i.ibb.co/DtMXvmZ/customar3.webp",
+    "name": "Jalukan mollika",
+    "customer_review": "Dish H is an exquisite and delightful dessert. The flavors were divine, and I savored every spoonful. It's a must-try for anyone with a sweet tooth. I would rate it 4.9 out of 5.The flavors were rich and satisfying",
+    "food": "Dessert",
+    "rating": 4.9
+  }
+]
