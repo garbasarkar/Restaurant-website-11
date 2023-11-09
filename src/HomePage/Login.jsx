@@ -1,19 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "/src/assets/loginImage.png";
 import google from "/src/assets/google.jpg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 const Login = () => {
   const { userLogIn } = useContext(AuthContext);
-  const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState('');
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState("");
+  // const navigate = useNavigate();
+  // const location = useLocation();
 
-  setPassword('');
-    setErrors('');
-    if(password.length < 6){
-      setPassword('Please Provide ma a six creacter is longer!')
-    }
   const handleLoginFrom = (e) => {
     e.preventDefault();
     const from = e.target;
@@ -21,11 +18,18 @@ const Login = () => {
     const password = from.password.value;
     console.log(email, password);
 
+    setPassword("");
+    setErrors("");
+    if (password.length < 6) {
+      setPassword("Please Provide ma a six creacter is longer!");
+    }
+
     userLogIn(email, password)
       .then((result) => {
         console.log(result.user);
         swal("Login successful!");
         from.reset();
+        // navigate(location?.state ? location?.state : '/')
       })
       .catch((error) => {
         console.error(error);
@@ -49,7 +53,9 @@ const Login = () => {
               placeholder="Email"
             />{" "}
             <br />
-            {password && <p className="text-sm text-red-500 font-semibold">{password}</p>}
+            {password && (
+              <p className="text-sm text-red-500 font-semibold">{password}</p>
+            )}
             <input
               className="w-full py-2 rounded mb-2 pl-2"
               type="password"
@@ -63,7 +69,9 @@ const Login = () => {
               type="submit"
               value="Login"
             />
-            {errors && <p className="text-sm text-red-500 font-semibold">{errors}</p>}
+            {errors && (
+              <p className="text-sm text-red-500 font-semibold">{errors}</p>
+            )}
           </form>
           <h1 className="mt-1 text-white">
             All Ready Havent account?{" "}
