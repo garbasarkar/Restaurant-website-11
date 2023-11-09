@@ -1,7 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
 import webLogo from "/src/assets/websiteLogo-removebg-preview.png";
+import { useContext } from "react";
+import { AuthContext } from "../PrivateAuth/PrivateAuth";
 
 const Header = () => {
+  const { userSignOut, user } = useContext(AuthContext);
+
+  const userLogOut = () => {
+    userSignOut()
+      .then((result) => {
+        console.log("user log out successful!", result);
+      })
+      .then((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="bg-[#E4FFE6] shadow-lg py-10">
       <nav className="flex justify-between items-center max-w-7xl mx-auto">
@@ -24,7 +37,11 @@ const Header = () => {
         </ul>
         <div className="flex gap-3 items-center">
           <input type="checkbox" className="toggle" checked />
-          <button>log out</button>
+          {user && (
+            <img className="w-10 h-10 rounded-full" src={user.photoURL}></img>
+          )}
+          {user && <h5>{user.email}</h5>}
+          {user ? <button onClick={userLogOut}>LOGOUT</button> : ""}
         </div>
       </nav>
     </div>
