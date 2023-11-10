@@ -41,7 +41,16 @@ const Header = () => {
             <img className="w-10 h-10 rounded-full" src={user.photoURL}></img>
           )}
           {user && <h5>{user.email}</h5>}
-          {user ? <button onClick={userLogOut}>LOGOUT</button> : ""}
+          {user ? (
+            <button
+              className="border px-4 py-1 rounded-md border-[#F97316]"
+              onClick={userLogOut}
+            > 
+              LOGOUT
+            </button>
+          ) : (
+            ""
+          )}
         </div>
       </nav>
     </div>
