@@ -6,6 +6,7 @@ import Login from "../HomePage/Login";
 import Register from "../HomePage/Register";
 import HomeAllSection from "../HomePage/HomeAllSection";
 import BlogPage from "../HomePage/BlogPage";
+import AllFood from "../HomePage/AllFood";
 
 const Routes = createBrowserRouter([
   {
@@ -26,9 +27,13 @@ const Routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: '/blog',
-        element: <BlogPage></BlogPage>
-      }
+        path: "/blog",
+        element: <BlogPage></BlogPage>,
+      },
+      {
+        path: "/food",
+        element: <AllFood></AllFood>,
+      },
     ],
   },
 ]);

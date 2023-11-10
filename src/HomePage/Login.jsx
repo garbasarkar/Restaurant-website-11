@@ -4,10 +4,13 @@ import google from "/src/assets/google.jpg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
 import swal from "sweetalert";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../Routes/firebase";
 const Login = () => {
   const { userLogIn } = useContext(AuthContext);
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
+  const googleLoginProvider = new GoogleAuthProvider();
   // const navigate = useNavigate();
   // const location = useLocation();
 
@@ -33,6 +36,17 @@ const Login = () => {
       })
       .catch((error) => {
         console.error(error);
+        setErrors("Please provide ma a valid email and password!");
+      });
+  };
+  const googlePupopLogin = () => {
+    return signInWithPopup(auth, googleLoginProvider)
+      .then((result) => {
+        console.log(result.user);
+        swal("Login successful!");
+      })
+      .catch((error) => {
+        console.log(error);
         setErrors("Please provide ma a valid email and password!");
       });
   };
@@ -81,7 +95,7 @@ const Login = () => {
           </h1>
         </div>
         <div className="flex justify-center mt-5">
-          <div className="cursor-pointer flex items-center justify-between px-2 w-72 hover:bg-purple-600 text-white font-semibold rounded-full border border-white py-1">
+          <div onClick={googlePupopLogin} className="cursor-pointer flex items-center justify-between px-2 w-72 hover:bg-purple-600 text-white font-semibold rounded-full border border-white py-1">
             <img className="w-8 rounded-full" src={google} alt="" />
             <h1>Google SignIn</h1>
           </div>

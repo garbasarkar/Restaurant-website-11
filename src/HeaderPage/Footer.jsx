@@ -1,8 +1,8 @@
 import webLogo from "/src/assets/websiteLogo-removebg-preview.png";
 const Footer = () => {
   return (
-    <footer className=" p-10 bg-base-200 text-base-content">
-      <div className="footer">
+    <footer className=" p-10 bg-base-200 text-base-content py-20">
+      <div className="footer max-w-6xl mx-auto">
         <aside>
           <img className="w-32" src={webLogo} alt="" />
           <p>
