@@ -5,6 +5,7 @@ import BenarPart from "../HomePage/BenarPart";
 import Login from "../HomePage/Login";
 import Register from "../HomePage/Register";
 import HomeAllSection from "../HomePage/HomeAllSection";
+import BlogPage from "../HomePage/BlogPage";
 
 const Routes = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const Routes = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path: '/blog',
+        element: <BlogPage></BlogPage>
+      }
     ],
   },
 ]);
