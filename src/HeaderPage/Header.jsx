@@ -31,6 +31,9 @@ const Header = () => {
           <NavLink to="/blog">
             <li>Blog</li>
           </NavLink>
+          <NavLink to="/purchase">
+            <li>Purchase </li>
+          </NavLink>
         </ul>
         <div className="flex gap-3 items-center">
           <input type="checkbox" className="toggle" checked />
@@ -45,7 +48,7 @@ const Header = () => {
                 Profile
               </label>
             </div>
-            <div className="drawer-side">
+            <div className="drawer-side z-10">
               <label
                 htmlFor="my-drawer-4"
                 aria-label="close sidebar"
@@ -65,10 +68,13 @@ const Header = () => {
                   <h5 className="text-center mb-5 mt-1">{user.email}</h5>
                 )}
                 <li>
-                  <a>Sidebar Item 1</a>
+                  <a>My added food</a>
                 </li>
                 <li>
-                  <a>Sidebar Item 2</a>
+                  <a>Add a food</a>
+                </li>
+                <li>
+                  <a>My ordered food</a>
                 </li>
               </ul>
             </div>

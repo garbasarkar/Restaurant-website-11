@@ -7,6 +7,7 @@ import Register from "../HomePage/Register";
 import HomeAllSection from "../HomePage/HomeAllSection";
 import BlogPage from "../HomePage/BlogPage";
 import AllFood from "../HomePage/AllFood";
+import AllFoodControl from "../HomePage/AllFoodControl";
 
 const Routes = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/food",
-        element: <AllFood></AllFood>,
+        element: <AllFoodControl></AllFoodControl>,
       },
     ],
   },

@@ -13,10 +13,8 @@ const AllFood = () => {
   }, []);
   console.log(card);
   return (
-    <div className="max-w-6xl mx-auto">
-      <h1>All Food!!!</h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+    <div className="">
+      <div className="border border-purple-700 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {card.map((card) => (
           <div className="" key={card._id}>
             <img className="h-[220px] w-full" src={card.image} alt="" />
