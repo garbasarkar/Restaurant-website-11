@@ -8,6 +8,7 @@ import HomeAllSection from "../HomePage/HomeAllSection";
 import BlogPage from "../HomePage/BlogPage";
 import AllFood from "../HomePage/AllFood";
 import AllFoodControl from "../HomePage/AllFoodControl";
+import Parchaes from "../PrivatePrachaesPage/Parchaes";
 
 const Routes = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const Routes = createBrowserRouter([
       {
         path: "/food",
         element: <AllFoodControl></AllFoodControl>,
+      },
+      {
+        path: "/purchase",
+        element: <Parchaes></Parchaes>,
       },
     ],
   },
