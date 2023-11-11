@@ -41,7 +41,7 @@ const AllFood = () => {
               <h4>Categoty: {card.category}</h4>
               <h4>Quantity: {card.quantity}</h4>
             </div>
-            <Link to={`/details/${card._id}`}>
+            <Link to={`/food/${card._id}`}>
               <button className="px-4 py-1 rounded-md hover:bg-[#F97316] hover:text-white  border border-[#F97316]">
                 Details
               </button>

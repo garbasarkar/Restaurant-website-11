@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import ParChaesBenar from "./ParChaesBenar";
+import { AuthContext } from "../PrivateAuth/PrivateAuth";
 
 const Parchaes = () => {
+  const { user } = useContext(AuthContext);
   const handleFormControl = (e) => {
     e.preventDefault();
     const from = e.target;
@@ -11,7 +14,21 @@ const Parchaes = () => {
     const price = from.price.value;
     const origin = from.origin.value;
     const areas = from.areas.value;
-    console.log(name, photo, category, quantity, price, origin, areas);
+    const email = user?.email;
+    const userName = user?.displayName;
+    const order = {
+        email,
+        userName,
+        name,
+        photo,
+        category, 
+        quantity,
+        price,
+        origin,
+        areas
+    }
+    
+    console.log(order)
   };
   return (
     <div>

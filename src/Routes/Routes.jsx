@@ -9,6 +9,7 @@ import BlogPage from "../HomePage/BlogPage";
 import AllFood from "../HomePage/AllFood";
 import AllFoodControl from "../HomePage/AllFoodControl";
 import Parchaes from "../PrivatePrachaesPage/Parchaes";
+import DetailsCard from "../PrivateAuth/DetailsCard";
 
 const Routes = createBrowserRouter([
   {
@@ -39,6 +40,11 @@ const Routes = createBrowserRouter([
       {
         path: "/purchase",
         element: <Parchaes></Parchaes>,
+      },
+      {
+        path: `/food/:id`,
+        element: <DetailsCard></DetailsCard>,
+        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`),
       },
     ],
   },
