@@ -1,8 +1,33 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "./PrivateAuth";
+import swal from 'sweetalert';
 
 const DetailsCard = () => {
+  const { user } = useContext(AuthContext);
   const singleFood = useLoaderData();
-  console.log(singleFood);
+  //   console.log(singleFood);
+  const store = {
+    ...singleFood,
+    email: user?.email,
+    displayName: user?.displayName,
+  };
+  const hanldeFoodOrder = () => {
+    fetch(`http://localhost:5000/food`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(store)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        // if(insertedId){
+            swal("Order is Successful!");
+        // }
+      })
+  };
   return (
     <div className="max-w-4xl mx-auto mt-10 mb-28">
       <div className="relative">
@@ -12,7 +37,10 @@ const DetailsCard = () => {
           alt=""
         />
         <div className="absolute mt-[-60px] ml-[630px]">
-          <button className="px-8 py-2  rounded-bl-full rounded-tr-full hover:bg-[#caface] bg-[#F97316] hover:text-black text-white font-semibold">
+          <button
+            onClick={() => hanldeFoodOrder(singleFood._id)}
+            className="px-8 py-2  rounded-bl-full rounded-tr-full hover:bg-[#caface] bg-[#F97316] hover:text-black text-white font-semibold"
+          >
             Order Me
           </button>
         </div>

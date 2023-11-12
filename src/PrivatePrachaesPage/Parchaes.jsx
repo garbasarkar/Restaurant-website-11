@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import ParChaesBenar from "./ParChaesBenar";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
+import swal from 'sweetalert';
 
 const Parchaes = () => {
   const { user } = useContext(AuthContext);
@@ -16,20 +17,33 @@ const Parchaes = () => {
     const areas = from.areas.value;
     const email = user?.email;
     const userName = user?.displayName;
-    const order = {
-        email,
-        userName,
-        name,
-        photo,
-        category, 
-        quantity,
-        price,
-        origin,
-        areas
-    }
-    
-    console.log(order)
+    const foodAdd = {
+      email: email,
+      userName: userName,
+      name: name,
+      photo: photo,
+      category: category,
+      quantity: quantity,
+      price: price,
+      origin: origin,
+      areas: areas,
+    };
+
+    fetch(`http://localhost:5000/addFood`, {
+    method: "POST", 
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(foodAdd)
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      swal("Parcaes Food is Successful!");
+    })
   };
+
+  
   return (
     <div>
       <ParChaesBenar></ParChaesBenar>

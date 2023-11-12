@@ -67,15 +67,15 @@ const Header = () => {
                 {user && (
                   <h5 className="text-center mb-5 mt-1">{user.email}</h5>
                 )}
-                <li>
-                  <a>My added food</a>
-                </li>
-                <li>
-                  <a>Add a food</a>
-                </li>
-                <li>
-                  <a>My ordered food</a>
-                </li>
+                <NavLink to="/addedFood">
+                  <a className="text-lg">My added food</a>
+                </NavLink>
+                <NavLink to="/aFood">
+                  <a className="text-lg">Add a food</a>
+                </NavLink>
+                <NavLink to="/orderedFood">
+                  <a className="text-lg">My ordered food</a>
+                </NavLink>
               </ul>
             </div>
           </div>
