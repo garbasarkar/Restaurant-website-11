@@ -31,9 +31,7 @@ const DetailsCard = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        // if(insertedId){
         swal("Order is Successful!");
-        // }
       });
   };
   return (

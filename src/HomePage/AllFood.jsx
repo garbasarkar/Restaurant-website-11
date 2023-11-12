@@ -12,7 +12,8 @@ const AllFood = () => {
         setCard(data);
       });
   }, []);
-  console.log(card);
+
+  console.log(card); 
   return (
     <div className="">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">

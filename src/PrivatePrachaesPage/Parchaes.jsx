@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import ParChaesBenar from "./ParChaesBenar";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 const Parchaes = () => {
   const { user } = useContext(AuthContext);
@@ -9,7 +9,7 @@ const Parchaes = () => {
     e.preventDefault();
     const from = e.target;
     const name = from.name.value;
-    const photo = from.photo.value;
+    const image = from.photo.value;
     const category = from.category.value;
     const quantity = from.quantity.value;
     const price = from.price.value;
@@ -17,33 +17,36 @@ const Parchaes = () => {
     const areas = from.areas.value;
     const email = user?.email;
     const userName = user?.displayName;
+    const review = from.review.value;
+    const madeBy = from.madeBy.value;
     const foodAdd = {
       email: email,
       userName: userName,
       name: name,
-      photo: photo,
+      image: image,
       category: category,
       quantity: quantity,
       price: price,
-      origin: origin,
-      areas: areas,
+      origin_country: origin,
+      short_description: areas,
+      customer_review: review,
+      made_by: madeBy,
     };
 
-    fetch(`http://localhost:5000/addFood`, {
-    method: "POST", 
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(foodAdd)
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      swal("Parcaes Food is Successful!");
+    fetch(`http://localhost:5000/food`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(foodAdd),
     })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        swal("Parcaes Food is Successful!");
+      });
   };
 
-  
   return (
     <div>
       <ParChaesBenar></ParChaesBenar>
@@ -113,6 +116,22 @@ const Parchaes = () => {
                 name="origin"
                 id=""
                 placeholder="Food Origin "
+              />
+            </div>
+            <div className="flex flex-col md:flex-row mb-3 justify-between gap-5">
+              <input
+                className="border py-2 rounded-md pl-2 w-full"
+                type="text"
+                name="madeBy"
+                id=""
+                placeholder="Made By"
+              />
+              <input
+                className="border py-2 rounded-md pl-2 w-full"
+                type="text"
+                name="review"
+                id=""
+                placeholder="Review"
               />
             </div>
 

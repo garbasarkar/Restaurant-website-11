@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
+import { AiFillDelete } from "react-icons/ai";
 
 const OrderPage = () => {
   const { user } = useContext(AuthContext);
@@ -12,14 +13,33 @@ const OrderPage = () => {
         setOrder(data);
       });
   }, [user?.email]);
-  console.log(order);
+
+  const handleFoodRemove = (e) => {
+    console.log(e.target);
+  };
+//   console.log(order);
   return (
-    <div className="max-w-6xl mx-auto my-20">
+    <div className="max-w-6xl mx-auto mt-10 mb-20 grid grid-cols-1 md:grid-cols-2 gap-5 ">
       {order.map((food) => (
-        <div key={food._id}>
-          <img src={food.image} alt="" />
-          <div></div>
-          
+        <div
+          key={food._id}
+          className="flex justify-between items-center p-4 bg-orange-300 rounded-md shadow-md "
+        >
+          <img
+            className="w-48 h-32 rounded-md hover:scale-110 transition-all"
+            src={food.image}
+            alt=""
+          />
+          <div className=" text-lg">
+            <h3>Name: {food.name}</h3>
+            <h4>Price: ${food.price}</h4>
+            <h3>Owner: {food.displayName}</h3>
+            <h5>Added Time: </h5>
+          </div>
+          <AiFillDelete
+            onClick={() => handleFoodRemove(food.email)}
+            className="text-2xl text-red-600 cursor-pointer"
+          ></AiFillDelete>
         </div>
       ))}
     </div>
