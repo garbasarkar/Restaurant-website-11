@@ -12,6 +12,7 @@ import Parchaes from "../PrivatePrachaesPage/Parchaes";
 import DetailsCard from "../PrivateAuth/DetailsCard";
 import OrderPage from "../ProfileALlPage/OrderPage";
 import AddedFood from "../ProfileALlPage/AddedFood";
+import FormFoodAdd from "../ProfileALlPage/FormFoodAdd";
 
 const Routes = createBrowserRouter([
   {
@@ -57,7 +58,12 @@ const Routes = createBrowserRouter([
       {
         path: "/addedFood",
         element: <AddedFood></AddedFood>,
+        loader: () => fetch(`http://localhost:5000/formFood`)
       },
+      {
+        path: '/aFood',
+        element: <FormFoodAdd></FormFoodAdd>
+      }
     ],
   },
 ]);

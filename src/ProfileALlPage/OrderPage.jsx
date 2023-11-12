@@ -14,10 +14,21 @@ const OrderPage = () => {
       });
   }, [user?.email]);
 
-  const handleFoodRemove = (e) => {
-    console.log(e.target);
+  const handleFoodRemove = (id) => {
+    fetch(`http://localhost:5000/food/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          alert("delete is successful!!!");
+          const remaining = order.filter((food) => food._id !== id);
+          setOrder(remaining);
+        }
+      });
   };
-//   console.log(order);
+  //   console.log(order);
   return (
     <div className="max-w-6xl mx-auto mt-10 mb-20 grid grid-cols-1 md:grid-cols-2 gap-5 ">
       {order.map((food) => (
@@ -37,7 +48,7 @@ const OrderPage = () => {
             <h5>Added Time: </h5>
           </div>
           <AiFillDelete
-            onClick={() => handleFoodRemove(food.email)}
+            onClick={() => handleFoodRemove(food._id)}
             className="text-2xl text-red-600 cursor-pointer"
           ></AiFillDelete>
         </div>
