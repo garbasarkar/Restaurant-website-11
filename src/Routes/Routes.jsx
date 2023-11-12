@@ -10,6 +10,8 @@ import AllFood from "../HomePage/AllFood";
 import AllFoodControl from "../HomePage/AllFoodControl";
 import Parchaes from "../PrivatePrachaesPage/Parchaes";
 import DetailsCard from "../PrivateAuth/DetailsCard";
+import OrderPage from "../ProfileALlPage/OrderPage";
+import AddedFood from "../ProfileALlPage/AddedFood";
 
 const Routes = createBrowserRouter([
   {
@@ -44,7 +46,17 @@ const Routes = createBrowserRouter([
       {
         path: `/food/:id`,
         element: <DetailsCard></DetailsCard>,
-        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/food/${params.id}`),
+      },
+      {
+        path: "/orderedFood",
+        element: <OrderPage></OrderPage>,
+        // loader: ({params}) => fetch`http://localhost:5000/order/${params.id}`
+      },
+      {
+        path: "/addedFood",
+        element: <AddedFood></AddedFood>,
       },
     ],
   },

@@ -68,13 +68,13 @@ const Header = () => {
                   <h5 className="text-center mb-5 mt-1">{user.email}</h5>
                 )}
                 <NavLink to="/addedFood">
-                  <a className="text-lg">My added food</a>
+                  <a className="text-lg">My Added Food</a>
                 </NavLink>
                 <NavLink to="/aFood">
-                  <a className="text-lg">Add a food</a>
+                  <a className="text-lg">Add A Food</a>
                 </NavLink>
                 <NavLink to="/orderedFood">
-                  <a className="text-lg">My ordered food</a>
+                  <a className="text-lg">My Rrdered Food</a>
                 </NavLink>
               </ul>
             </div>

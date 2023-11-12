@@ -1,32 +1,40 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "./PrivateAuth";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 const DetailsCard = () => {
   const { user } = useContext(AuthContext);
   const singleFood = useLoaderData();
   //   console.log(singleFood);
   const store = {
-    ...singleFood,
+    name: singleFood?.name,
+    image: singleFood?.image,
+    category: singleFood?.category,
+    price: singleFood?.price,
+    quantity: singleFood?.quantity,
+    made_by: singleFood?.made_by,
+    origin_country: singleFood?.origin_country,
+    short_description: singleFood?.short_description,
+    customer_review: singleFood?.customer_review,
     email: user?.email,
     displayName: user?.displayName,
   };
   const hanldeFoodOrder = () => {
-    fetch(`http://localhost:5000/food`, {
+    fetch(`http://localhost:5000/order`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(store)
+      body: JSON.stringify(store),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         // if(insertedId){
-            swal("Order is Successful!");
+        swal("Order is Successful!");
         // }
-      })
+      });
   };
   return (
     <div className="max-w-4xl mx-auto mt-10 mb-28">
