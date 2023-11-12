@@ -1,16 +1,18 @@
+import { NavLink } from "react-router-dom";
+
 const ErrorPage = () => {
   return (
     <div className="text-center  ">
       <img
-        className="w-full h-[100vh]"
-        src="/src/assets/404-error.jpg"
+        className="w-full h-[70vh]"
+        src="https://i.ibb.co/NKBncDL/404img.jpg"
         alt=""
       />
-      {/* <h1>404. That’s an error.</h1>
-      <p>
-        The requested URL /dsljfoisd was not found on this server. <br /> That’s
-        all we know.
-      </p> */}
+      <NavLink to="/">
+        <button className="px-8 py-2 bg-[#dad6de] font-semibold  rounded-md">
+          Go Home
+        </button>
+      </NavLink>
     </div>
   );
 };
