@@ -13,6 +13,7 @@ import DetailsCard from "../PrivateAuth/DetailsCard";
 import OrderPage from "../ProfileALlPage/OrderPage";
 import AddedFood from "../ProfileALlPage/AddedFood";
 import FormFoodAdd from "../ProfileALlPage/FormFoodAdd";
+import UpdatePage from "../ProfileALlPage/UpdatePage";
 
 const Routes = createBrowserRouter([
   {
@@ -58,12 +59,18 @@ const Routes = createBrowserRouter([
       {
         path: "/addedFood",
         element: <AddedFood></AddedFood>,
-        loader: () => fetch(`http://localhost:5000/formFood`)
+        loader: () => fetch(`http://localhost:5000/formFood`),
       },
       {
-        path: '/aFood',
-        element: <FormFoodAdd></FormFoodAdd>
-      }
+        path: "/aFood",
+        element: <FormFoodAdd></FormFoodAdd>,
+      },
+      {
+        path: "/formFood/:id",
+        element: <UpdatePage></UpdatePage>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/formFood/${params.id}`),
+      },
     ],
   },
 ]);

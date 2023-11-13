@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
+import { Link } from "react-router-dom";
 
 const FormFoodAdd = () => {
   const { user } = useContext(AuthContext);
@@ -119,18 +120,11 @@ const FormFoodAdd = () => {
               cols="5"
               rows="10"
             ></textarea>
-            <div className="flex gap-5">
-              <input
-                className=" py-2 mt-5 rounded-bl-full rounded-tr-full hover:bg-[#caface] bg-[#9316f9] hover:text-black text-white font-semibold w-full "
-                type="submit"
-                value="Add to Food"
-              />
-              <input
-                className=" py-2 mt-5 rounded-bl-full rounded-tr-full hover:bg-[#caface] bg-[#74fd9b] hover:text-black text-white font-semibold w-full "
-                type="submit"
-                value="Food Update"
-              />
-            </div>
+            <input
+              className=" py-2 mt-5 rounded-bl-full rounded-tr-full hover:bg-[#caface] bg-[#9316f9] hover:text-black text-white font-semibold w-full "
+              type="submit"
+              value="Add to Food"
+            />
           </form>
         </div>
         <div className="flex-1 space-y-3">

@@ -28,6 +28,9 @@ const OrderPage = () => {
         }
       });
   };
+
+  const time = new Date();
+
   //   console.log(order);
   return (
     <div className="max-w-6xl mx-auto mt-10 mb-20 grid grid-cols-1 md:grid-cols-2 gap-5 ">
@@ -45,7 +48,7 @@ const OrderPage = () => {
             <h3>Name: {food.name}</h3>
             <h4>Price: ${food.price}</h4>
             <h3>Owner: {food.displayName}</h3>
-            <h5>Added Time: </h5>
+            <h5>Added Time: {time.toDateString()}</h5>
           </div>
           <AiFillDelete
             onClick={() => handleFoodRemove(food._id)}
