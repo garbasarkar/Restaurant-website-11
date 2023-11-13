@@ -39,7 +39,12 @@ const FormFoodAdd = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(formFood),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        from.reset();
+      });
     console.log(formFood);
   };
   return (

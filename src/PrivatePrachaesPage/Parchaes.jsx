@@ -44,6 +44,7 @@ const Parchaes = () => {
       .then((data) => {
         console.log(data);
         swal("Parcaes Food is Successful!");
+        from.reset();
       });
   };
 

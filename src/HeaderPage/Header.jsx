@@ -1,10 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import webLogo from "/src/assets/websiteLogo-removebg-preview.png";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
 
 const Header = () => {
   const { userSignOut, user } = useContext(AuthContext);
+  const [open, setOpen] = useState(false);
 
   const userLogOut = () => {
     userSignOut()

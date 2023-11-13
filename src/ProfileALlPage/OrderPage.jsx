@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
 import { AiFillDelete } from "react-icons/ai";
-
+import swal from "sweetalert";
 const OrderPage = () => {
   const { user } = useContext(AuthContext);
   const [order, setOrder] = useState([]);
@@ -22,7 +22,7 @@ const OrderPage = () => {
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
-          alert("delete is successful!!!");
+          swal("Parcaes Food is Successful!");
           const remaining = order.filter((food) => food._id !== id);
           setOrder(remaining);
         }
@@ -45,9 +45,9 @@ const OrderPage = () => {
             alt=""
           />
           <div className=" text-lg">
-            <h3>Name: {food.name}</h3>
+            <h3>Name: {food.category}</h3>
             <h4>Price: ${food.price}</h4>
-            <h3>Owner: {food.displayName}</h3>
+            <h3>Owner: {food.name}</h3>
             <h5>Added Time: {time.toDateString()}</h5>
           </div>
           <AiFillDelete

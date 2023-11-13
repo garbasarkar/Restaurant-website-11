@@ -1,35 +1,43 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
+import swal from "sweetalert";
 
 const UpdatePage = () => {
   const { user } = useContext(AuthContext);
   const updateFood = useLoaderData();
+  const { id } = useParams();
+  console.log(id);
   console.log(updateFood);
-  const store = {
-    userName: updateFood?.userName,
-    name: updateFood?.name,
-    image: updateFood?.image,
-    category: updateFood?.category,
-    quantity: updateFood?.quantity,
-    price: updateFood?.price,
-    origin_country: updateFood?.origin_country,
-    short_description: updateFood?.short_description,
-    customer_review: updateFood?.customer_review,
-    made_by: updateFood?.made_by,
-    email: user?.email
-  };
-  const handleUpdateFormControl = (id) => {
+  
+  const handleUpdateFormControl = (e) => {
+    e.preventDefault();
+
+    const update = e.target;
+    const store = {
+      name: update?.name.value,
+      image: update?.image.value,
+      category: update?.category.value,
+      quantity: update?.quantity.value,
+      price: update?.price.value,
+      origin_country: update?.origin.value,
+      short_description: update?.areas.value,
+      customer_review: update?.review.value,
+      made_by: update?.madeBy.value
+    };
+
+
     fetch(`http://localhost:5000/formFood/${id}`, {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(store)
+      body: JSON.stringify(store),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        swal("Parcaes Food is Successful!");
       });
   };
   return (
@@ -48,7 +56,7 @@ const UpdatePage = () => {
             <input
               className="border py-2 rounded-md pl-2 w-full"
               type="text"
-              name="photo"
+              name="image"
               id=""
               placeholder="PhotoURL"
               defaultValue={updateFood.image}

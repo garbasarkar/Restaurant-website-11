@@ -6,9 +6,9 @@ import { AuthContext } from "../PrivateAuth/PrivateAuth";
 
 const AddedFood = () => {
   const { user } = useContext(AuthContext);
-  const [foodData, setFoodData] = useState([]);
   const AddedAllFood = useLoaderData();
-  //   console.log(AddedAllFood);
+  const [foodData, setFoodData] = useState(AddedAllFood);
+  // console.log(foodData);
   const time = new Date();
 
   const handleFoodCardRomove = (id) => {
@@ -20,7 +20,7 @@ const AddedFood = () => {
         console.log(data);
         if (data.deletedCount > 0) {
           alert("delete is successful!!!");
-          const remaining = AddedAllFood.filter((food) => food._id !== id);
+          const remaining = foodData.filter((food) => food._id !== id);
           setFoodData(remaining);
         }
       });
@@ -38,7 +38,7 @@ const AddedFood = () => {
             alt=""
           />
           <div className=" text-lg">
-            <h3>Name: {addedFood.name}</h3>
+            <h3>Name: {addedFood.category}</h3>
             <h4>Price: ${addedFood.price}</h4>
             <h3>Owner: {addedFood.name}</h3>
             <h5>Added Time: {time.toDateString()}</h5>
