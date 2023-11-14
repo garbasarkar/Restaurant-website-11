@@ -40,7 +40,7 @@ const BenarPart = () => {
       <div id="slide2" className="carousel-item relative w-full bg-[#E4FFE6]">
         <div className="absolute flex flex-col md:flex-row  justify-between items-center w-full gap-5 px-1 md:px-20">
           <div className="space-y-3">
-            <h1 className="text-5xl font-semibold">
+            <h1 className="text-2xl mg:text-5xl font-semibold">
               Primium quality Food for Your <br></br>{" "}
               <span className="text-orange-500">healthy & Daily Life</span>
             </h1>
@@ -69,7 +69,7 @@ const BenarPart = () => {
       <div id="slide3" className="carousel-item relative w-full bg-[#E4FFE6]">
         <div className="absolute flex flex-col md:flex-row  justify-between items-center w-full gap-5 px-1 md:px-20">
           <div className="space-y-3">
-            <h1 className="text-5xl font-semibold">
+            <h1 className="text-2xl md:text-5xl font-semibold">
               Indulge Your Taste With Our <br></br>{" "}
               <span className="text-orange-500">Delicious Food</span>
             </h1>
@@ -98,7 +98,7 @@ const BenarPart = () => {
       <div id="slide4" className="carousel-item relative w-full bg-[#E4FFE6]">
         <div className="absolute flex flex-col md:flex-row  justify-between items-center w-full gap-5 px-1 md:px-20">
           <div className="space-y-3">
-            <h1 className="text-5xl font-semibold">
+            <h1 className="text-2xl md:text-5xl font-semibold">
               Super market <br></br>{" "}
               <span className="text-orange-500">Healthy living Food</span>
             </h1>

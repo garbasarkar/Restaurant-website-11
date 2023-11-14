@@ -4,20 +4,57 @@ import { BiHeart } from "react-icons/bi";
 
 const AllFood = () => {
   const [card, setCard] = useState([]);
+  const [counts, setCount] = useState([]);
+  const { count } = counts;
+  const [allPage, setAllPage] = useState(9);
+  const [currentPage, setCurrentPage] = useState(0);
+  const numberOfPage = Math.ceil(count / allPage);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/food`)
+    fetch(`http://localhost:5000/food?page=${currentPage}&size=${allPage}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setCard(data);
+      });
+  }, [currentPage, allPage]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/foodCount`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCount(data);
       });
   }, []);
 
-  console.log(card);
+
+
+  // const pages = [...Array(numberOfPage).keys()];
+  const pages = [];
+  for (let i = 0; i < numberOfPage; i++) {
+    pages.push(i);
+  }
+  console.log(pages);
+
+  const handleParPic = (e) => {
+    const pagi = parseInt(e.target.value);
+    setAllPage(pagi);
+    setCurrentPage(0);
+  };
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  const handleNextPage = () => {
+    if (currentPage < pages.length - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+  // console.log(card);
   return (
     <div className="">
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 mb-20">
         {card.map((card) => (
           <div
             className=" border p-2 rounded-md shadow-md bg-white shadow-lg"
@@ -50,6 +87,25 @@ const AllFood = () => {
             </Link>
           </div>
         ))}
+      </div>
+      <div className="text-center mb-16 pagination ">
+        <p> current page: {currentPage}</p>
+        <button onClick={handlePrevPage}>Prev</button>
+        {pages.map((page) => (
+          <button
+            className={currentPage === page ? "selected" : undefined}
+            onClick={() => setCurrentPage(page)}
+            key={page}
+          >
+            {page}
+          </button>
+        ))}
+        <button onClick={handleNextPage}>Next</button>
+        <select value={allPage} onChange={handleParPic}>
+          <option value="5">5</option>
+          <option value="7">7</option>
+          <option value="10">10</option>
+        </select>
       </div>
     </div>
   );

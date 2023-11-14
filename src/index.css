@@ -13,6 +13,19 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.imgBg{
-  background-image: url('');
+.imgBg {
+  background-image: url("");
+}
+
+.pagination {
+  text-align: center;
+  margin-right: 40px;
+}
+.pagination button {
+  margin-right: 10px;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+.pagination .selected {
+  background-color: palegreen;
 }

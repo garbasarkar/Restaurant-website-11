@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import webLogo from "/src/assets/websiteLogo-removebg-preview.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Header = () => {
   const { userSignOut, user } = useContext(AuthContext);
@@ -19,10 +20,23 @@ const Header = () => {
   return (
     <div className="bg-[#E4FFE6] shadow-lg py-7">
       <nav className="flex justify-between items-center max-w-7xl mx-auto">
-        <Link to="/">
-          <img className="w-32" src={webLogo} alt="image" />
-        </Link>
-        <ul className="flex gap-6 text-lg font-semibold">
+        <div onClick={() => setOpen(!open)} className="text-2xl lg:hidden pl-5">
+          {open === true ? (
+            <AiOutlineClose></AiOutlineClose>
+          ) : (
+            <AiOutlineMenu></AiOutlineMenu>
+          )}
+        </div>
+        <div className="hidden lg:inline-flex">
+          <Link to="/">
+            <img className="w-32" src={webLogo} alt="image" />
+          </Link>
+        </div>
+        <ul
+          className={`bg-gray-400 p-5 md:flex duration-1000 absolute ${
+            open ? "left-0 top-20" : "top-[-400px] left-0"
+          } lg:static px-5 lg:bg-white z-10 `}
+        >
           <NavLink to="/home">
             <li>Home</li>
           </NavLink>
@@ -37,7 +51,7 @@ const Header = () => {
           </NavLink>
         </ul>
         <div className="flex gap-3 items-center">
-          <input type="checkbox" className="toggle" checked />
+          {/* <input type="checkbox" className="toggle" checked /> */}
           <div className="drawer drawer-end">
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
@@ -81,7 +95,10 @@ const Header = () => {
             </div>
           </div>
           {user && (
-            <img className="w-10 h-10 rounded-full" src={user.photoURL}></img>
+            <img
+              className="hidden md:inline-flex w-10 h-10 rounded-full"
+              src={user.photoURL}
+            ></img>
           )}
           {/* {user && <h5>{user.email}</h5>} */}
           {user ? (
