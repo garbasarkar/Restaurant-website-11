@@ -147,7 +147,7 @@ const Parchaes = () => {
             <input
               className=" py-2 mt-5 rounded-bl-full rounded-tr-full hover:bg-[#caface] bg-[#F97316] hover:text-black text-white font-semibold w-full "
               type="submit"
-              value="Add to Cart"
+              value="Add A New Food"
             />
           </form>
         </div>

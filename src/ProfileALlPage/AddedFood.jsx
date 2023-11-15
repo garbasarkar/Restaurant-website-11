@@ -1,18 +1,17 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai";
 import { GrUpdate } from "react-icons/gr";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
 
 const AddedFood = () => {
   const { user } = useContext(AuthContext);
-  const AddedAllFood = useLoaderData();
-  const [foodData, setFoodData] = useState(AddedAllFood);
-  // console.log(foodData);
+  const [addedFood, setAddedFood] = useState([]);
+  const email = user?.email;
   const time = new Date();
 
   const handleFoodCardRomove = (id) => {
-    fetch(`http://localhost:5000/formFood/${id}`, {
+    fetch(`http://localhost:5000/food-by-email?email=${email}${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -20,14 +19,24 @@ const AddedFood = () => {
         console.log(data);
         if (data.deletedCount > 0) {
           alert("delete is successful!!!");
-          const remaining = foodData.filter((food) => food._id !== id);
-          setFoodData(remaining);
+          const remaining = addedFood.filter((food) => food._id !== id);
+          setAddedFood(remaining);
         }
       });
   };
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/food-by-email?email=${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAddedFood(data);
+      });
+  }, [email]);
+  console.log(addedFood);
+  // console.log(email);
   return (
     <div className="max-w-6xl mx-auto mt-10 mb-20 grid grid-cols-1 md:grid-cols-2 gap-5 ">
-      {AddedAllFood.map((addedFood) => (
+      {addedFood.map((addedFood) => (
         <div
           key={addedFood._id}
           className="flex justify-between items-center p-4 bg-orange-300 rounded-md shadow-md "

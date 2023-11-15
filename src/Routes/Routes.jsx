@@ -1,12 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 import HomePage from "../HomePage/HomePage";
-import BenarPart from "../HomePage/BenarPart";
 import Login from "../HomePage/Login";
 import Register from "../HomePage/Register";
 import HomeAllSection from "../HomePage/HomeAllSection";
 import BlogPage from "../HomePage/BlogPage";
-import AllFood from "../HomePage/AllFood";
 import AllFoodControl from "../HomePage/AllFoodControl";
 import Parchaes from "../PrivatePrachaesPage/Parchaes";
 import DetailsCard from "../PrivateAuth/DetailsCard";
@@ -14,6 +12,8 @@ import OrderPage from "../ProfileALlPage/OrderPage";
 import AddedFood from "../ProfileALlPage/AddedFood";
 import FormFoodAdd from "../ProfileALlPage/FormFoodAdd";
 import UpdatePage from "../ProfileALlPage/UpdatePage";
+import PrivateRouter from "../PrivateAuth/PrivateRouter";
+import Home from "../HomePage/Home";
 
 const Routes = createBrowserRouter([
   {
@@ -24,6 +24,10 @@ const Routes = createBrowserRouter([
       {
         path: "/",
         element: <HomeAllSection></HomeAllSection>,
+      },
+      {
+        path: "/home",
+        element: <Home></Home>,
       },
       {
         path: "/login",
@@ -42,12 +46,16 @@ const Routes = createBrowserRouter([
         element: <AllFoodControl></AllFoodControl>,
       },
       {
-        path: "/purchase",
+        path: "/aFood",
         element: <Parchaes></Parchaes>,
       },
       {
         path: `/food/:id`,
-        element: <DetailsCard></DetailsCard>,
+        element: (
+          <PrivateRouter>
+            <DetailsCard></DetailsCard>
+          </PrivateRouter>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/food/${params.id}`),
       },
@@ -58,12 +66,13 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/addedFood",
-        element: <AddedFood></AddedFood>,
-        loader: () => fetch(`http://localhost:5000/formFood`),
+        element: <AddedFood></AddedFood>
       },
       {
-        path: "/aFood",
+        path: "/purchase/:id",
         element: <FormFoodAdd></FormFoodAdd>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/food/${params.id}`),
       },
       {
         path: "/formFood/:id",

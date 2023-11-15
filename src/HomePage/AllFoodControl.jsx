@@ -1,13 +1,14 @@
 import BanerSec from "../PrivatePrachaesPage/ParChaesBenar";
-import AllFood from "./AllFood";
+import AllFood from "./MenuFoods";
 import LeftSite from "./LeftSite";
+import AllFoodP from "./AllFoodP";
 
 const AllFoodControl = () => {
   return (
     <div className=" ">
       <LeftSite></LeftSite>
       <div className="max-w-6xl mx-auto">
-        <AllFood></AllFood>
+        <AllFoodP></AllFoodP>
       </div>
     </div>
   );

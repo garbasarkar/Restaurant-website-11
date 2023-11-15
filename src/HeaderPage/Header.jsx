@@ -35,18 +35,18 @@ const Header = () => {
         <ul
           className={`bg-gray-400 p-5 md:flex duration-1000 absolute ${
             open ? "left-0 top-20" : "top-[-400px] left-0"
-          } lg:static px-5 lg:bg-white z-10 `}
+          } lg:static  px-5 lg:bg-[#E4FFE6] z-10 `}
         >
-          <NavLink to="/home">
+          <NavLink className="mr-5 text-lg font-semibold" to="/home">
             <li>Home</li>
           </NavLink>
-          <NavLink to="/food">
+          <NavLink className="mr-5 text-lg font-semibold" to="/food">
             <li>All Food</li>
           </NavLink>
-          <NavLink to="/blog">
+          <NavLink className="mr-5 text-lg font-semibold" to="/blog">
             <li>Blog</li>
           </NavLink>
-          <NavLink to="/purchase">
+          <NavLink className="mr-5 text-lg font-semibold" to="/purchase">
             <li>Purchase </li>
           </NavLink>
         </ul>
@@ -95,10 +95,7 @@ const Header = () => {
             </div>
           </div>
           {user && (
-            <img
-              className="hidden md:inline-flex w-10 h-10 rounded-full"
-              src={user.photoURL}
-            ></img>
+            <img className=" w-10 h-10 rounded-full" src={user.photoURL}></img>
           )}
           {/* {user && <h5>{user.email}</h5>} */}
           {user ? (

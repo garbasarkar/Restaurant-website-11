@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { BiHeart } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
-const AllFood = () => {
+const AllFoodP = () => {
   const [card, setCard] = useState([]);
   const [counts, setCount] = useState([]);
   const { count } = counts;
   const [allPage, setAllPage] = useState(9);
   const [currentPage, setCurrentPage] = useState(0);
   const numberOfPage = Math.ceil(count / allPage);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/food`)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setCard(data);
+      });
+  }, []);
 
   useEffect(() => {
     fetch(`http://localhost:5000/food?page=${currentPage}&size=${allPage}`)
@@ -26,8 +35,6 @@ const AllFood = () => {
         setCount(data);
       });
   }, []);
-
-
 
   // const pages = [...Array(numberOfPage).keys()];
   const pages = [];
@@ -51,10 +58,11 @@ const AllFood = () => {
       setCurrentPage(currentPage + 1);
     }
   };
-  // console.log(card);
+  console.log(card);
+
   return (
-    <div className="">
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 mb-20">
+    <div>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-8 mb-10">
         {card.map((card) => (
           <div
             className=" border p-2 rounded-md shadow-md bg-white shadow-lg"
@@ -80,16 +88,15 @@ const AllFood = () => {
               <h4>Categoty: {card.category}</h4>
               <h4>Quantity: {card.quantity}</h4>
             </div>
-            <Link to={`/food/${card._id}`}>
+            {/* <Link to={`/food/${card._id}`}>
               <button className="px-4 py-1 rounded-md hover:bg-[#F97316] hover:text-white  border border-[#F97316]">
                 Details
               </button>
-            </Link>
+            </Link> */}
           </div>
         ))}
       </div>
       <div className="text-center mb-16 pagination ">
-        <p> current page: {currentPage}</p>
         <button onClick={handlePrevPage}>Prev</button>
         {pages.map((page) => (
           <button
@@ -111,4 +118,4 @@ const AllFood = () => {
   );
 };
 
-export default AllFood;
+export default AllFoodP;
