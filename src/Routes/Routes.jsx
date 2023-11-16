@@ -75,10 +75,10 @@ const Routes = createBrowserRouter([
           fetch(`http://localhost:5000/food/${params.id}`),
       },
       {
-        path: "/formFood/:id",
+        path: "/update/:id",
         element: <UpdatePage></UpdatePage>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/formFood/${params.id}`),
+          fetch(`http://localhost:5000/food/${params.id}`),
       },
     ],
   },

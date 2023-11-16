@@ -46,7 +46,7 @@ const Header = () => {
           <NavLink className="mr-5 text-lg font-semibold" to="/blog">
             <li>Blog</li>
           </NavLink>
-          <NavLink className="mr-5 text-lg font-semibold" to="/purchase">
+          <NavLink className="mr-5 text-lg font-semibold" to="/">
             <li>Purchase </li>
           </NavLink>
         </ul>

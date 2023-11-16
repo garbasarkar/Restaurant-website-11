@@ -11,7 +11,7 @@ const AddedFood = () => {
   const time = new Date();
 
   const handleFoodCardRomove = (id) => {
-    fetch(`http://localhost:5000/food-by-email?email=${email}${id}`, {
+    fetch(`http://localhost:5000/food/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -59,7 +59,7 @@ const AddedFood = () => {
             ></AiFillDelete>
             <Link
               //   onClick={() => handleUpdateFood(addedFood._id)}
-              to={`/formFood/${addedFood._id}`}
+              to={`/update/${addedFood._id}`}
               className="mt-4"
             >
               <GrUpdate className="text-2xl text-red-600 cursor-pointer mt-5"></GrUpdate>

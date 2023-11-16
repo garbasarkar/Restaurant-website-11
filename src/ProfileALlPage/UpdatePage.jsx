@@ -27,7 +27,7 @@ const UpdatePage = () => {
     };
 
 
-    fetch(`http://localhost:5000/formFood/${id}`, {
+    fetch(`http://localhost:5000/food/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
