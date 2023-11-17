@@ -58,9 +58,16 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
 }
 .chefBg {
   background-image: url("https://html.merku.love/cafert/img/services/contacts.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.happyBg {
+  background-image: url("/src/assets/chef/happy-chef.avif");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

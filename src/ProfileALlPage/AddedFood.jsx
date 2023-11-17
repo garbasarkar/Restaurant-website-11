@@ -9,7 +9,7 @@ const AddedFood = () => {
   const [addedFood, setAddedFood] = useState([]);
   const email = user?.email;
   const time = new Date();
- 
+
   const handleFoodCardRomove = (id) => {
     fetch(`http://localhost:5000/food/${id}`, {
       method: "DELETE",
@@ -32,7 +32,7 @@ const AddedFood = () => {
         setAddedFood(data);
       });
   }, [email]);
-  console.log(addedFood);
+  console.log(addedFood.length);
   // console.log(email);
   return (
     <div className="max-w-6xl mx-auto mt-10 mb-20 grid grid-cols-1 md:grid-cols-2 gap-5 ">
@@ -66,7 +66,11 @@ const AddedFood = () => {
             </Link>
           </div>
         </div>
-      ))}
+      ))} 
+      {/* <div>
+          <img src="/src/assets/No-food/no_food.png" alt="" />
+
+        </div> */}
     </div>
   );
 };

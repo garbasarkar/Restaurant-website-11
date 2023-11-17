@@ -6,6 +6,7 @@ import MenuItem from "./MenuItem";
 import Review from "./Review";
 import WelCome from "./WelCome";
 import MenuFoods from "./MenuFoods";
+import HappyCus from "./HappyCus";
 
 const HomeAllSection = () => {
   return (
@@ -15,7 +16,7 @@ const HomeAllSection = () => {
       <Chef></Chef>
       <MenuFoods></MenuFoods>
       <Discount></Discount>
-      {/* <Review></Review> */}
+      <HappyCus></HappyCus>
     </div>
   );
 };

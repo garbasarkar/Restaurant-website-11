@@ -3,7 +3,11 @@ const WelCome = () => {
   return (
     <div className="flex flex-col md:flex-row justify-between items-center gap-5 max-w-6xl mx-auto mt-20 px-1 md:px-0">
       <div className="flex-1">
-        <img className="rounded-md" src={restu} alt="" />
+        <img
+          className="rounded-md hover:scale-105 transition-all hover:shadow-md"
+          src={restu}
+          alt=""
+        />
       </div>
       <div className="flex-1 space-y-3">
         <h1 className="text-2xl md:text-4xl font-semibold">

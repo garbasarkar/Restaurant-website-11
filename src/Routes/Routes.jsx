@@ -48,6 +48,10 @@ const Routes = createBrowserRouter([
         element: <AllFoodControl></AllFoodControl>,
       },
       {
+        path: 'aFood',
+        element: <Parchaes></Parchaes>
+      },
+      {
         path: "/contact",
         element: <PrivateContact></PrivateContact>,
       },
@@ -57,18 +61,13 @@ const Routes = createBrowserRouter([
       },
       {
         path: `/food/:id`,
-        element: (
-          <PrivateRouter>
-            <DetailsCard></DetailsCard>
-          </PrivateRouter>
-        ),
+        element: <DetailsCard></DetailsCard>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/food/${params.id}`),
       },
       {
         path: "/orderedFood",
-        element: <OrderPage></OrderPage>,
-        // loader: ({params}) => fetch`http://localhost:5000/order/${params.id}`
+        element:  <OrderPage></OrderPage>,
       },
       {
         path: "/addedFood",
@@ -76,7 +75,9 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/purchase/:id",
-        element: <FormFoodAdd></FormFoodAdd>,
+        element: <PrivateRouter>
+          <FormFoodAdd></FormFoodAdd>
+        </PrivateRouter>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/food/${params.id}`),
       },
