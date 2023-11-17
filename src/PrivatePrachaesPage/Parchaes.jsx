@@ -55,7 +55,7 @@ const Parchaes = () => {
       <div className="max-w-6xl mx-auto mb-20 flex flex-col md:flex-row justify-between items-center gap-5">
         <div className="flex-1 space-y-3">
           <h1 className="text-2xl md:text-4xl font-semibold">
-            Book A <span className="text-[#F97316]"> Table</span>
+            Food A <span className="text-[#F97316]"> Table</span>
           </h1>
           <p>
             Certainly! It would be helpful if you provide more details about the
@@ -147,7 +147,7 @@ const Parchaes = () => {
             <input
               className=" py-2 mt-5 rounded-bl-full rounded-tr-full hover:bg-[#caface] bg-[#F97316] hover:text-black text-white font-semibold w-full "
               type="submit"
-              value="Add A New Food"
+              value="Add New Food"
             />
           </form>
         </div>

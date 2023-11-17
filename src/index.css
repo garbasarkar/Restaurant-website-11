@@ -8,13 +8,16 @@ body {
 .bgImg {
   width: 100%;
   height: 100%;
-  background-image: url("/src/assets/images/plate.png");
+  background-image: url("https://i.ibb.co/Y8PBPV3/pasta.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.imgBg {
-  background-image: url("");
+.imgBgs {
+  background-image: url("/src/assets/images/plate.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .pagination {
@@ -28,4 +31,37 @@ body {
 }
 .pagination .selected {
   background-color: palegreen;
+}
+
+.backImg1 {
+  background-image: url("/src/assets/chef/chef5.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.backImg1 .ul {
+}
+.backImg2 {
+  background-image: url("/src/assets/chef/chef4.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.backImg3 {
+  background-image: url("/src/assets/chef/chef3.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.foodBg {
+  background-image: url("/src/assets//chef/9057b6fa2816639.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.chefBg {
+  background-image: url("https://html.merku.love/cafert/img/services/contacts.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

@@ -106,16 +106,17 @@ const MenuFoods = () => {
         ))}
       </div>
       {card.length > 6 && (
-          <div className='flex justify-center'>
+        <div className="flex justify-center">
           {/* <div className={food === card.length && "hidden"}> */}
-            <Link to='/food'>
+          <Link to="/food">
             <button
               // onClick={() => setFood(card.length)}
               className="px-4 py-1 rounded-md hover:bg-[#F97316] hover:text-white  border border-[#F97316]"
             >
               See All
-            </button></Link>
-          </div>
+            </button>
+          </Link>
+        </div>
       )}
       {/* <div className="text-center mb-16 pagination ">
         <button onClick={handlePrevPage}>Prev</button>

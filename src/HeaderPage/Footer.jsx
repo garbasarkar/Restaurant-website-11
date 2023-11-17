@@ -2,11 +2,15 @@ import { NavLink } from "react-router-dom";
 import webLogo from "/src/assets/websiteLogo-removebg-preview.png";
 const Footer = () => {
   return (
-    <footer className=" p-10 bg-black/50 text-base-content py-20">
+    <footer className="p-10 bg-black/50 text-base-content py-20 foodBg">
       <div className="footer max-w-6xl mx-auto text-white">
         <aside>
           <NavLink to="/">
-            <img className="w-32" src={webLogo} alt="" />
+            <img
+              className="w-32 bg-white w-16 h-16 rounded-full"
+              src={webLogo}
+              alt=""
+            />
           </NavLink>
           <p>
             ACME Industries Ltd.
@@ -33,6 +37,7 @@ const Footer = () => {
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
+          <a className="link link-hover">+98 54387 349</a>
         </nav>
       </div>
     </footer>

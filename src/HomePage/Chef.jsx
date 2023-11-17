@@ -16,7 +16,7 @@ const Chef = () => {
     centerMode: true,
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 4,
+    slidesToShow: 3,
     speed: 500,
     dots: true,
     slidesToScroll: 1,
@@ -58,10 +58,10 @@ const Chef = () => {
         illum, perferendis est distinctio nostrum <br /> aspernatur, illo
         repellat reiciendis qui quod nesciunt similique laudantium?
       </p>
-      <div>
+      <div className="chefBg  py-20 mt-8">
         <Slider {...settings} className="mt-6">
           {allChef.map((chap) => (
-            <div key={chap.id} className="border p-4 rounded-md">
+            <div key={chap.id} className=" p-4 rounded-md">
               <img
                 className="h-48 w-full rounded-md shadow-md"
                 src={chap.image}

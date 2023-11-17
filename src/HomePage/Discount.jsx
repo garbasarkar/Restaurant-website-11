@@ -1,7 +1,7 @@
 import vegetable from "/src/assets/Thai-removebg-preview.png";
 const Discount = () => {
   return (
-    <div className="px-1 md:px-0">
+    <div className="px-1 md:px-0 mb-24">
       <div className="flex flex-col md:flex-row justify-between items-center gap-5 max-w-6xl mx-auto rounded-md bg-white shadow-md p-7 mt-16">
         <div className="flex-1 flex justify-between items-center">
           <img className="w-1/2 md:w-2/3" src={vegetable} alt="" />

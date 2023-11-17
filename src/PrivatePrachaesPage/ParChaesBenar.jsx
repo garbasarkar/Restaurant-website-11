@@ -1,6 +1,6 @@
 const ParChaesBenar = () => {
   return (
-    <div className="bgImg mb-20">
+    <div className="imgBgs mb-20">
       <div className=" text-center bg-black/50 py-28 text-white space-y-3">
         <h1 className="text-2xl md:text-4xl font-semibold">
           Our Latest <span className="text-[#F97316]"> Foods</span>

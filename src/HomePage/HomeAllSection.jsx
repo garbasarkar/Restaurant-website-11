@@ -15,7 +15,7 @@ const HomeAllSection = () => {
       <Chef></Chef>
       <MenuFoods></MenuFoods>
       <Discount></Discount>
-      <Review></Review>
+      {/* <Review></Review> */}
     </div>
   );
 };

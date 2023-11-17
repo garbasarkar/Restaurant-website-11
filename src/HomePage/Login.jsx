@@ -95,9 +95,12 @@ const Login = () => {
           </h1>
         </div>
         <div className="flex justify-center mt-5">
-          <div onClick={googlePupopLogin} className="cursor-pointer flex items-center justify-between px-2 w-72 hover:bg-purple-600 text-white font-semibold rounded-full border border-white py-1">
+          <div
+            onClick={googlePupopLogin}
+            className="cursor-pointer flex items-center justify-between px-2 w-72 hover:bg-purple-600 text-white font-semibold rounded-full border border-white py-1"
+          >
             <img className="w-8 rounded-full" src={google} alt="" />
-            <h1>Google SignIn</h1>
+            <h1>Continue With Google</h1>
           </div>
         </div>
       </div>

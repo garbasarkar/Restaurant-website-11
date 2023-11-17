@@ -43,12 +43,19 @@ const Header = () => {
           <NavLink className="mr-5 text-lg font-semibold" to="/food">
             <li>All Food</li>
           </NavLink>
+          {user && (
+            <NavLink className="mr-5 text-lg font-semibold" to="/service">
+              <li>Service</li>
+            </NavLink>
+          )}
           <NavLink className="mr-5 text-lg font-semibold" to="/blog">
             <li>Blog</li>
           </NavLink>
-          <NavLink className="mr-5 text-lg font-semibold" to="/">
-            <li>Purchase </li>
-          </NavLink>
+          {user && (
+            <NavLink className="mr-5 text-lg font-semibold" to="/contact">
+              <li>Contact</li>
+            </NavLink>
+          )}
         </ul>
         <div className="flex gap-3 items-center">
           {/* <input type="checkbox" className="toggle" checked /> */}

@@ -14,6 +14,8 @@ import FormFoodAdd from "../ProfileALlPage/FormFoodAdd";
 import UpdatePage from "../ProfileALlPage/UpdatePage";
 import PrivateRouter from "../PrivateAuth/PrivateRouter";
 import Home from "../HomePage/Home";
+import PrivateContact from "../PrivateNav/PrivateContact";
+import PrivateSer from "../PrivateNav/PrivateSer";
 
 const Routes = createBrowserRouter([
   {
@@ -46,8 +48,12 @@ const Routes = createBrowserRouter([
         element: <AllFoodControl></AllFoodControl>,
       },
       {
-        path: "/aFood",
-        element: <Parchaes></Parchaes>,
+        path: "/contact",
+        element: <PrivateContact></PrivateContact>,
+      },
+      {
+        path: "/service",
+        element: <PrivateSer></PrivateSer>,
       },
       {
         path: `/food/:id`,
@@ -66,7 +72,7 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/addedFood",
-        element: <AddedFood></AddedFood>
+        element: <AddedFood></AddedFood>,
       },
       {
         path: "/purchase/:id",
