@@ -37,23 +37,25 @@ const OrderPage = () => {
       {order.map((food) => (
         <div
           key={food._id}
-          className="flex justify-between items-center p-4 bg-orange-300 rounded-md shadow-md "
+          className="flex flex-col md:flex-row justify-between items-center p-4 bg-orange-300 rounded-md shadow-md "
         >
           <img
-            className="w-48 h-32 rounded-md hover:scale-110 transition-all"
+            className=" md:w-48 md:h-32 rounded-md hover:scale-110 transition-all"
             src={food.image}
             alt=""
           />
-          <div className=" text-lg">
-            <h3>Name: {food.category}</h3>
-            <h4>Price: ${food.price}</h4>
-            <h3>Owner: {food.name}</h3>
-            <h5>Added Time: {time.toDateString()}</h5>
+          <div>
+            <div className=" text-lg">
+              <h3>Name: {food.category}</h3>
+              <h4>Price: ${food.price}</h4>
+              <h3>Owner: {food.name}</h3>
+              <h5>Added Time: {time.toDateString()}</h5>
+            </div>
+            <AiFillDelete
+              onClick={() => handleFoodRemove(food._id)}
+              className="text-2xl text-red-600 cursor-pointer"
+            ></AiFillDelete>
           </div>
-          <AiFillDelete
-            onClick={() => handleFoodRemove(food._id)}
-            className="text-2xl text-red-600 cursor-pointer"
-          ></AiFillDelete>
         </div>
       ))}
     </div>
