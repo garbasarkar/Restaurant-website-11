@@ -21,7 +21,7 @@ const DetailsCard = () => {
     displayName: user?.displayName,
   };
   // const hanldeFoodOrder = () => {
-  //   fetch(`http://localhost:5000/order`, {
+  //   fetch(`https://assignment-11-restaurent-server.vercel.app/order`, {
   //     method: "POST",
   //     headers: {
   //       "content-type": "application/json",
@@ -44,8 +44,8 @@ const DetailsCard = () => {
         />
         <div className="absolute mt-[-60px] ml-[630px]">
           <Link to={`/purchase/${singleFood._id}`}>
-            <button 
-            // onClick={`/purchase/${singleFood._id}`}
+            <button
+              // onClick={`/purchase/${singleFood._id}`}
               className="px-8 py-2  rounded-bl-full rounded-tr-full hover:bg-[#caface] bg-[#F97316] hover:text-black text-white font-semibold"
             >
               Order Me

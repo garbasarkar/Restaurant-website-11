@@ -9,7 +9,7 @@ const UpdatePage = () => {
   const { id } = useParams();
   console.log(id);
   console.log(updateFood);
-  
+
   const handleUpdateFormControl = (e) => {
     e.preventDefault();
 
@@ -23,11 +23,10 @@ const UpdatePage = () => {
       origin_country: update?.origin.value,
       short_description: update?.areas.value,
       customer_review: update?.review.value,
-      made_by: update?.madeBy.value
+      made_by: update?.madeBy.value,
     };
 
-
-    fetch(`http://localhost:5000/food/${id}`, {
+    fetch(`https://assignment-11-restaurent-server.vercel.app/food/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

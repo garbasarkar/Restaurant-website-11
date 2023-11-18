@@ -31,7 +31,7 @@ const FormFoodAdd = () => {
   //     emails: emails,
   //   };
 
-  //   //   fetch(`http://localhost:5000/food`, {
+  //   //   fetch(`https://assignment-11-restaurent-server.vercel.app/food`, {
   //   //     method: "POST",
   //   //     headers: {
   //   //       "content-type": "application/json",
@@ -46,7 +46,7 @@ const FormFoodAdd = () => {
   //   //     });
   // };
   const tim = new Date();
-  
+
   const handleFormControl = (e) => {
     e.preventDefault();
 
@@ -65,7 +65,7 @@ const FormFoodAdd = () => {
       time: tim.toDateString(),
     };
 
-    fetch(`http://localhost:5000/order`, {
+    fetch(`https://assignment-11-restaurent-server.vercel.app/order`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -108,7 +108,7 @@ const FormFoodAdd = () => {
   //     made_by: madeBy,
   //   };
 
-  //   fetch(`http://localhost:5000/formFood`, {
+  //   fetch(`https://assignment-11-restaurent-server.vercel.app/formFood`, {
   //     method: "POST",
   //     headers: {
   //       "content-type": "application/json",
@@ -244,7 +244,6 @@ const FormFoodAdd = () => {
       </div>
       <div className="flex-1 p-4 relative flex flex-col text-gray-700 w-full bg-white shadow-md rounded-xl bg-clip-border">
         <form onSubmit={handleFormControl}>
-          
           <div className="flex flex-col md:flex-row mb-3 justify-between gap-5">
             <input
               className="border py-2 rounded-md pl-2 w-full"

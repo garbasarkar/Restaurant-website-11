@@ -48,8 +48,8 @@ const Routes = createBrowserRouter([
         element: <AllFoodControl></AllFoodControl>,
       },
       {
-        path: 'aFood',
-        element: <Parchaes></Parchaes>
+        path: "aFood",
+        element: <Parchaes></Parchaes>,
       },
       {
         path: "/contact",
@@ -63,11 +63,13 @@ const Routes = createBrowserRouter([
         path: `/food/:id`,
         element: <DetailsCard></DetailsCard>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/food/${params.id}`),
+          fetch(
+            `https://assignment-11-restaurent-server.vercel.app/food/${params.id}`
+          ),
       },
       {
         path: "/orderedFood",
-        element:  <OrderPage></OrderPage>,
+        element: <OrderPage></OrderPage>,
       },
       {
         path: "/addedFood",
@@ -75,17 +77,23 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/purchase/:id",
-        element: <PrivateRouter>
-          <FormFoodAdd></FormFoodAdd>
-        </PrivateRouter>,
+        element: (
+          <PrivateRouter>
+            <FormFoodAdd></FormFoodAdd>
+          </PrivateRouter>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/food/${params.id}`),
+          fetch(
+            `https://assignment-11-restaurent-server.vercel.app/food/${params.id}`
+          ),
       },
       {
         path: "/update/:id",
         element: <UpdatePage></UpdatePage>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/food/${params.id}`),
+          fetch(
+            `https://assignment-11-restaurent-server.vercel.app/food/${params.id}`
+          ),
       },
     ],
   },

@@ -11,7 +11,7 @@ const AddedFood = () => {
   const time = new Date();
 
   const handleFoodCardRomove = (id) => {
-    fetch(`http://localhost:5000/food/${id}`, {
+    fetch(`https://assignment-11-restaurent-server.vercel.app/food/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -26,7 +26,9 @@ const AddedFood = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/food-by-email?email=${email}`)
+    fetch(
+      `https://assignment-11-restaurent-server.vercel.app/food-by-email?email=${email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setAddedFood(data);

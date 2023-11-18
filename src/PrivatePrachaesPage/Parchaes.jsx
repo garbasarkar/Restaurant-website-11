@@ -33,7 +33,7 @@ const Parchaes = () => {
       made_by: madeBy,
     };
 
-    fetch(`http://localhost:5000/food`, {
+    fetch(`https://assignment-11-restaurent-server.vercel.app/food`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -7,7 +7,9 @@ const OrderPage = () => {
   const [order, setOrder] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${user?.email}`)
+    fetch(
+      `https://assignment-11-restaurent-server.vercel.app/order/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setOrder(data);
@@ -15,7 +17,7 @@ const OrderPage = () => {
   }, [user?.email]);
 
   const handleFoodRemove = (id) => {
-    fetch(`http://localhost:5000/food/${id}`, {
+    fetch(`https://assignment-11-restaurent-server.vercel.app/food/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
