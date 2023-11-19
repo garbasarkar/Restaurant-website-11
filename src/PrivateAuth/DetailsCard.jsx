@@ -22,7 +22,7 @@ const DetailsCard = () => {
     displayName: user?.displayName,
   };
   // const hanldeFoodOrder = () => {
-  //   fetch(`http://localhost:5000/order`, {
+  //   fetch(`https://assignment-11-restaurent-server.vercel.app/order`, {
   //     method: "POST",
   //     headers: {
   //       "content-type": "application/json",

@@ -32,7 +32,7 @@ const FormFoodAdd = () => {
   //     emails: emails,
   //   };
 
-  //   //   fetch(`http://localhost:5000/food`, {
+  //   //   fetch(`https://assignment-11-restaurent-server.vercel.app/food`, {
   //   //     method: "POST",
   //   //     headers: {
   //   //       "content-type": "application/json",
@@ -66,7 +66,7 @@ const FormFoodAdd = () => {
       time: tim.toDateString(),
     };
 
-    fetch(`http://localhost:5000/order`, {
+    fetch(`https://assignment-11-restaurent-server.vercel.app/order`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -109,7 +109,7 @@ const FormFoodAdd = () => {
   //     made_by: madeBy,
   //   };
 
-  //   fetch(`http://localhost:5000/formFood`, {
+  //   fetch(`https://assignment-11-restaurent-server.vercel.app/formFood`, {
   //     method: "POST",
   //     headers: {
   //       "content-type": "application/json",

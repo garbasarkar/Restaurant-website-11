@@ -26,7 +26,7 @@ const UpdatePage = () => {
       made_by: update?.madeBy.value,
     };
 
-    fetch(`http://localhost:5000/food/${id}`, {
+    fetch(`https://assignment-11-restaurent-server.vercel.app/food/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

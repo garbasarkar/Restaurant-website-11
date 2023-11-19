@@ -9,7 +9,9 @@ const OrderPage = () => {
   console.log(order);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${user?.email}`)
+    fetch(
+      `https://assignment-11-restaurent-server.vercel.app/order/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setOrder(data);
@@ -18,9 +20,12 @@ const OrderPage = () => {
 
   const handleFoodRemove = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/deleteFood/${id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://assignment-11-restaurent-server.vercel.app/deleteFood/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
