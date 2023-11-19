@@ -11,8 +11,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
   const googleLoginProvider = new GoogleAuthProvider();
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLoginFrom = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ const Login = () => {
         console.log(result.user);
         swal("Login successful!");
         from.reset();
-        // navigate(location?.state ? location?.state : '/')
+        navigate(location?.state ? location?.state : '/')
       })
       .catch((error) => {
         console.error(error);

@@ -59,7 +59,7 @@ const AllFoodP = () => {
       setCurrentPage(currentPage + 1);
     }
   };
-  console.log(card);
+  // console.log(card);
 
   return (
     <div>
