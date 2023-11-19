@@ -11,7 +11,7 @@ const AddedFood = () => {
   const time = new Date();
 
   const handleFoodCardRomove = (id) => {
-    fetch(`https://assignment-11-restaurent-server.vercel.app/food/${id}`, {
+    fetch(`http://localhost:5000/food/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -26,9 +26,7 @@ const AddedFood = () => {
   };
 
   useEffect(() => {
-    fetch(
-      `https://assignment-11-restaurent-server.vercel.app/food-by-email?email=${email}`
-    )
+    fetch(`http://localhost:5000/food-by-email?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         setAddedFood(data);
@@ -40,37 +38,37 @@ const AddedFood = () => {
     <div className="max-w-6xl mx-auto mt-10 mb-20 grid grid-cols-1 md:grid-cols-2 gap-5 ">
       {addedFood.map((addedFood) => (
         <div
-          key={addedFood._id}
-          className="flex flex-col md:flex-row  justify-between items-center p-4 bg-orange-300 rounded-md shadow-md "
-        >
-          <img
-            className="w-48 h-32 rounded-md hover:scale-110 transition-all"
-            src={addedFood.image}
-            alt=""
-          />
+        key={addedFood._id}
+        className="flex flex-col md:flex-row  justify-between items-center p-4 bg-orange-300 rounded-md shadow-md "
+      >
+        <img
+          className="w-48 h-32 rounded-md hover:scale-110 transition-all"
+          src={addedFood.image}
+          alt=""
+        />
 
-          <div className=" flex  items-center justify-between gap-4 ">
-            <div className=" text-lg">
-              <h3>Name: {addedFood.category}</h3>
-              <h4>Price: ${addedFood.price}</h4>
-              <h3>Owner: {addedFood.name}</h3>
-              <h5>Added Time: {time.toDateString()}</h5>
-            </div>
-            <div>
-              <AiFillDelete
-                onClick={() => handleFoodCardRomove(addedFood._id)}
-                className="text-2xl text-red-600 cursor-pointer"
-              ></AiFillDelete>
-              <Link
-                //   onClick={() => handleUpdateFood(addedFood._id)}
-                to={`/update/${addedFood._id}`}
-                className="mt-4"
-              >
-                <GrUpdate className="text-2xl text-red-600 cursor-pointer mt-5"></GrUpdate>
-              </Link>
-            </div>
+        <div className=" flex  items-center justify-between gap-4 ">
+          <div className=" text-lg">
+            <h3>Name: {addedFood.category}</h3>
+            <h4>Price: ${addedFood.price}</h4>
+            <h3>Owner: {addedFood.name}</h3>
+            <h5>Added Time: {time.toDateString()}</h5>
+          </div>
+          <div>
+            <AiFillDelete
+              onClick={() => handleFoodCardRomove(addedFood._id)}
+              className="text-2xl text-red-600 cursor-pointer"
+            ></AiFillDelete>
+            <Link
+              //   onClick={() => handleUpdateFood(addedFood._id)}
+              to={`/update/${addedFood._id}`}
+              className="mt-4"
+            >
+              <GrUpdate className="text-2xl text-red-600 cursor-pointer mt-5"></GrUpdate>
+            </Link>
           </div>
         </div>
+      </div>
       ))}
       {/* <div>
           <img src="/src/assets/No-food/no_food.png" alt="" />

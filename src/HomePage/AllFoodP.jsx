@@ -11,7 +11,7 @@ const AllFoodP = () => {
   const numberOfPage = Math.ceil(count / allPage);
 
   useEffect(() => {
-    fetch(`https://assignment-11-restaurent-server.vercel.app/food`)
+    fetch(`http://localhost:5000/food`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -20,9 +20,7 @@ const AllFoodP = () => {
   }, []);
 
   useEffect(() => {
-    fetch(
-      `https://assignment-11-restaurent-server.vercel.app/food?page=${currentPage}&size=${allPage}`
-    )
+    fetch(`http://localhost:5000/food?page=${currentPage}&size=${allPage}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -31,7 +29,7 @@ const AllFoodP = () => {
   }, [currentPage, allPage]);
 
   useEffect(() => {
-    fetch(`https://assignment-11-restaurent-server.vercel.app/foodCount`)
+    fetch(`http://localhost:5000/foodCount`)
       .then((res) => res.json())
       .then((data) => {
         setCount(data);

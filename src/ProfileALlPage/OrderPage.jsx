@@ -5,11 +5,10 @@ import swal from "sweetalert";
 const OrderPage = () => {
   const { user } = useContext(AuthContext);
   const [order, setOrder] = useState([]);
+  console.log(order);
 
   useEffect(() => {
-    fetch(
-      `https://assignment-11-restaurent-server.vercel.app/order/${user?.email}`
-    )
+    fetch(`http://localhost:5000/order/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrder(data);
@@ -17,7 +16,8 @@ const OrderPage = () => {
   }, [user?.email]);
 
   const handleFoodRemove = (id) => {
-    fetch(`https://assignment-11-restaurent-server.vercel.app/food/${id}`, {
+    console.log(id);
+    fetch(`http://localhost:5000/deleteFood/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
