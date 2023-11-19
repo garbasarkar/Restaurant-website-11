@@ -2,6 +2,7 @@ import { useContext } from "react";
 import ParChaesBenar from "./ParChaesBenar";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 
 const Parchaes = () => {
   const { user } = useContext(AuthContext);
@@ -50,6 +51,9 @@ const Parchaes = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Restaurant | New Food Add</title>
+      </Helmet>
       <ParChaesBenar></ParChaesBenar>
 
       <div className="max-w-6xl mx-auto mb-20 flex flex-col md:flex-row justify-between items-center gap-5">

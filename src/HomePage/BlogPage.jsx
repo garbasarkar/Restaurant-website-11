@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet-async";
+
 const BlogPage = () => {
   return (
     <div className="mb-28 max-w-6xl mx-auto mt-10 px-1 md:px-0">
+      <Helmet>
+        <title>Restaurant | Blog</title>
+      </Helmet>
       <ul>
         <li className="mt-5 text-lg font-semibold">
           What is one way data binding?

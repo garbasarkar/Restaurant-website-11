@@ -2,6 +2,7 @@ import BanerSec from "../PrivatePrachaesPage/ParChaesBenar";
 import AllFood from "./MenuFoods";
 import LeftSite from "./LeftSite";
 import AllFoodP from "./AllFoodP";
+import { Helmet } from "react-helmet-async";
 
 const AllFoodControl = () => {
   return (

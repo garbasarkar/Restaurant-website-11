@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "./PrivateAuth";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 
 const DetailsCard = () => {
   const { user } = useContext(AuthContext);
@@ -36,6 +37,9 @@ const DetailsCard = () => {
   // };
   return (
     <div className="max-w-4xl mx-auto mt-10 mb-28">
+      <Helmet>
+        <title>Restaurant | Food Details</title>
+      </Helmet>
       <div className="relative">
         <img
           className="mb-4 rounded-md w-full h-[60vh]"

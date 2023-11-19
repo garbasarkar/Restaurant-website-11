@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
 import { Link, useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 
 const FormFoodAdd = () => {
   const { user } = useContext(AuthContext);
@@ -226,6 +227,9 @@ const FormFoodAdd = () => {
     //   </div>
     // </div>
     <div className="max-w-6xl mx-auto mt-20 mb-20 flex flex-col md:flex-row justify-between items-center gap-5">
+      <Helmet>
+        <title>Restaurant | Purchase</title>
+      </Helmet>
       <div className="flex-1 space-y-3">
         <h1 className="text-2xl md:text-4xl font-semibold">
           Purchase Book A <span className="text-[#F97316]"> Table</span>

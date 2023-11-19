@@ -7,10 +7,14 @@ import Review from "./Review";
 import WelCome from "./WelCome";
 import MenuFoods from "./MenuFoods";
 import HappyCus from "./HappyCus";
+import { Helmet } from "react-helmet-async";
 
 const HomeAllSection = () => {
   return (
     <div>
+      <Helmet>
+        <title>Restaurant</title>
+      </Helmet>
       <BenarPart></BenarPart>
       <WelCome></WelCome>
       <Chef></Chef>

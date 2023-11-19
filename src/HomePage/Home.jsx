@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import Review from "./Review";
 
 const Home = () => {
   return (
     <div className="max-w-6xl mx-auto">
+      <Helmet>
+        <title>Restaurant | Home</title>
+      </Helmet>
       <div className="text-center mt-5 mb-8">
         <h1 className="">TEAM</h1>
         <h4 className="text-2xl md:text-4xl font-semibold">

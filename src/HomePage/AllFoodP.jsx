@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { BiHeart } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
@@ -62,6 +63,9 @@ const AllFoodP = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Restaurant | All Food</title>
+      </Helmet>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-8 mb-10">
         {card.map((card) => (
           <div

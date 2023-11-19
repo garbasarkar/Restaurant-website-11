@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../PrivateAuth/PrivateAuth";
 import { AiFillDelete } from "react-icons/ai";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 const OrderPage = () => {
   const { user } = useContext(AuthContext);
   const [order, setOrder] = useState([]);
@@ -36,6 +37,9 @@ const OrderPage = () => {
   //   console.log(order);
   return (
     <div className="max-w-6xl mx-auto mt-10 mb-20 grid grid-cols-1 md:grid-cols-2 gap-5 ">
+      <Helmet>
+        <title>Restaurant | Order Food</title>
+      </Helmet>
       {order.map((food) => (
         <div
           key={food._id}
