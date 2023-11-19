@@ -2,7 +2,7 @@
 
 #### Name: Restaurant 0005
 
-#### Live Link: https://elite-icicle.surge.sh/
+#### Live Link: https://restaurant-food-76b85.web.app/
 
 <ul>
     <li>This restaurant website is made for online platform. Let's do a business online.</li>
